@@ -2,9 +2,35 @@
 
 ## Python
 
-- Какие типы данных есть в Python? 
+- Какие типы данных есть в Python?
 
-- Что такое PEP? Расскажите про PEP8.
+  <details>
+  <summary>Ответ:</summary>
+
+  ```
+  int
+  float
+  complex
+  bool
+  None
+  str
+  list
+  dict
+  tuple
+  set
+  frozenset
+  range
+  bytes
+  bytearray
+  file
+  Exception
+  iterator
+  generator
+  ```
+  
+  </details>
+
+- Что такое PEP? Расскажите про PEP8. (Python Enhancement Proposal - Предложение по улучшению Python)
 
 - Контекстный менеджер - что это? 
 
@@ -14,7 +40,7 @@
 
 - В чем отличие `is` от `==`?
 
-- Что делает `(i+1 for i in range(5))`? В чем отличие от `[i+1 for i in range(5)]`?
+
 
 
 ## Django + DRF
@@ -61,6 +87,8 @@
 
 ## Тестовые задания:
 
+- Что делает `(i+1 for i in range(5))`? В чем отличие от `[i+1 for i in range(5)]`?
+
 - Как поменять местами 2 переменных без использования третьей?
 
   <details>
@@ -78,9 +106,6 @@
 
 - Напишите функцию, которая выводит разницу между двумя листами.
 
-  <details>
-  <summary>Решение:</summary>
-	
   ```
   array_diff([1,2], [1]) == [2]
   array_diff([1,2,2], [1]) == [2,2]
@@ -88,6 +113,21 @@
   array_diff([1,2,2], []) == [1,2,2]
   array_diff([], [1,2]) == []
   array_diff([1,2,3], [1, 2]) == [3]
+  ```
+
+  <details>
+  <summary>Решение:</summary>
+	
+  ```
+  def array_diff(a, b):
+    return [x for x in a if x not in b]
+  
+  def array_diff(a, b):
+    result = []
+    for item in a:
+        if item not in b:
+            result.append(item)
+    return result
   ```
 
   </details>
