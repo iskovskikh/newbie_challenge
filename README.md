@@ -63,19 +63,67 @@
 
 - Как поменять местами 2 переменных без использования третьей?
 
+  <details>
+  <summary>Решение:</summary>
+
+  ```
+  a = 4
+  b = 5
+  a = a + b
+  b = a - b
+  a = a - b
+  ```
+
+  </details>
+
 - Напишите функцию, которая выводит разницу между двумя листами.
+
+  <details>
+  <summary>Решение:</summary>
+	
+  ```
+  array_diff([1,2], [1]) == [2]
+  array_diff([1,2,2], [1]) == [2,2]
+  array_diff([1,2,2], [2]) == [1]
+  array_diff([1,2,2], []) == [1,2,2]
+  array_diff([], [1,2]) == []
+  array_diff([1,2,3], [1, 2]) == [3]
+  ```
+
+  </details>
 
 - Напишите функцию, которая преобразует строку по следующему паттерну:
 
-  `"abcd" -> "A-Bb-Ccc-Dddd"`
+  ```
+  accum("abcd") == "A-Bb-Ccc-Dddd"
+  accum("bUjPi") == "B-Uu-Jjj-Pppp-Iiiii"
+  accum("whTosD") == "W-Hh-Ttt-Oooo-Sssss-Dddddd"
+  ```
 
-	`"bUjPi" -> "B-Uu-Jjj-Pppp-Iiiii"`
+  \* На вход функции может быть передана строка содержащая символы только из набора `[a-zA-Z]`.
+  
+  <details>
+  <summary>Решение:</summary>
 
-	`"whTosD" -> "W-Hh-Ttt-Oooo-Sssss-Dddddd"`
-
-	\* На вход функции может быть передана строка содержащая символы только из набора `[a-zA-Z]`.
-
+  ```
+  def accum(s):    
+      return '-'.join([(item * (index+1)).capitalize() for index, item in enumerate(list(s))])
+  ```
+  </details>
+  
 - Напишите функцию-генератор паролей.
+
+  <details>
+  <summary>Решение:</summary>
+
+  ```
+  import string
+  import random
+  
+  def pw_gen(size = 8, chars=string.ascii_letters + string.digits + string.punctuation):
+      return ''.join(random.choice(chars) for _ in range(size))
+  ```
+  </details
 
 - Вы разрабатываете бекенд-часть для интернет-магазина. Какие API методы Вы создали бы для каталога, товаров и корзины?
 
